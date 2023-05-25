@@ -1,8 +1,8 @@
 import { createRouter,createWebHistory } from "vue-router"
 
 import EmotionStorageMain from "@/components/EmotionStorageMain"
-import EmotionSave from '@/components/emotions/EmotionSave'
-import EmotionView from '@/components/emotions/EmotionView'
+import EmotionSave from '@/components/emotions/save/EmotionSave'
+import EmotionView from '@/components/emotions/view/EmotionView'
 
 const routes = [
     { path: '/', name: 'main', component: EmotionStorageMain},
