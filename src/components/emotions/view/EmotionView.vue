@@ -1,13 +1,38 @@
 <template>
     <div>
         Emotion View Page <br>
+        <CarenderView />
         <button @click="fetchData()">버튼 클릭</button>
-        <p> {{ data }} </p>
+
+        <table v-for="(post, index) in data" :key="index" border="1" style="border: 1px;">
+            <thead>
+                <th>닉네임</th>
+                <th>날짜</th>
+                <th>태그</th>
+                <th>제목</th>
+                <th>내용</th>
+            </thead>
+            <tbody>
+                <tr>
+                <td>{{ post.name }}</td>
+                <td>{{ post.date }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.content }}</td>
+                <!-- <td>{{ data.tags }}</td> -->
+                <td>
+                    <p v-for="(tag, index) in post.tags" :key="index"> 
+                        {{ tag }}
+                    </p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
 <script>
 import { emotionPostGetAll } from '@/apis/save/emotionSaveAPI';
+import CarenderView from '@/components/emotions/view/carenderView.vue';
 
 export default {
     name: 'EmotionView',
@@ -16,13 +41,11 @@ export default {
             data: null,
         }
     },
+    components: {CarenderView},
     methods:{
         async fetchData(){
             try{
                 this.data = await emotionPostGetAll()
-            console.log('@@@@@@@@@>>>'+this.data)
-            console.log('#########>>>'+Object.keys(this.data))
-            console.log('#########>>>'+Object.values(this.data))
             }catch(error){
                 console.log(error+'!!!')
             }

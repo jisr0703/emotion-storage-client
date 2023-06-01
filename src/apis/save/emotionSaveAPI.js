@@ -31,13 +31,11 @@ async function emotionPostGetAll(){
             await mockEmotionPostGetAll()
             return await Axios.get('/emtPost')
                 .then(response => response.data.postData)
-                // .then(response => response.data.postData)
         }else{                                      // api call
             await Axios.get('/emtPost')
             .then(response => {
                 console.log('api called')
                 return response.data.postData;
-                // return response.data;
             })
             .catch(error => {                       // Error when calling api
                 console.error(error + '!!!');

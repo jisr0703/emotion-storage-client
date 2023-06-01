@@ -21,7 +21,7 @@ export default {
             try{
                 this.data = await saveGet();
             }catch(error){
-                console.log('error >>>', error )
+                console.log(error + '!!!')
             }
         }
     },
