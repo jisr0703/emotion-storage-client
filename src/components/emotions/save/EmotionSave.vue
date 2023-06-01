@@ -1,6 +1,7 @@
 <template>
     <div>
         Emotion Save Page!!!
+        <button @click="fetchData"> click!!! </button>
         <p>{{ data }}</p>
     </div>
 </template>
@@ -15,8 +16,14 @@ export default {
             data: 'default',
         }
     },
-    mounted() {
-        saveGet();
+    methods: {
+        async fetchData(){
+            try{
+                this.data = await saveGet();
+            }catch(error){
+                console.log('error >>>', error )
+            }
+        }
     },
 }
 </script>
