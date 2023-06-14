@@ -8,7 +8,7 @@ function emotionPostFakeData(){
         const date = dayjs(faker.date.recent()).format('YYYY-MM-DD HH:mm:ss');
         // dayjs(dateTimeString).format('YYYY-MM-DD HH:mm:ss');
         const title = faker.word.adjective();
-        const content = faker.lorem.paragraph({min:1, max:3});
+        const content = faker.lorem.paragraph();
         const tags = []
         const num = Math.floor(Math.random() * 5) + 1;
         for (let j = 0; j < num; j++) {

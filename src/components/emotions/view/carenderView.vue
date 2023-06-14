@@ -11,7 +11,7 @@
             <tbody>
                 <tr v-for="week in weeks" :key="week">
                 <td v-for="date in week" :key="date" :class="{ 'disabled': !isCurrentMonth(date) }">
-                    <a href="./"> {{ date.getDate() }} </a> 
+                    <a href="/view"> {{ date.getDate() }} </a> 
                 </td>
                 </tr>
             </tbody>

@@ -4,21 +4,20 @@
         <CarenderView />
         <button @click="fetchData()">버튼 클릭</button>
 
-        <table v-for="(post, index) in data" :key="index" border="1" style="border: 1px;">
+        <table border="1" style="border: 1px;">
             <thead>
                 <th>닉네임</th>
                 <th>날짜</th>
-                <th>태그</th>
                 <th>제목</th>
                 <th>내용</th>
+                <th>태그</th>
             </thead>
-            <tbody>
+            <tbody v-for="(post, index) in data" :key="index">
                 <tr>
                 <td>{{ post.name }}</td>
                 <td>{{ post.date }}</td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.content }}</td>
-                <!-- <td>{{ data.tags }}</td> -->
                 <td>
                     <p v-for="(tag, index) in post.tags" :key="index"> 
                         {{ tag }}

@@ -1,0 +1,75 @@
+/* common */
+body {
+    display: flex;
+    flex-direction: row;
+}
+/* common */
+
+/* ESHeader.vue */
+.header-area{
+    display: flex;
+    height: 100px;
+    width: 1000px;
+}
+/* ESHeader.vue */
+
+/* ESLogo.vue */
+.main-logo-area{
+    display: flex;
+    flex-direction: row;
+}
+.main-logo{
+    height: 100px;
+    width: 100px;
+}
+/* ESLogo.vue */
+
+/* ESNav.vue */
+.nav-list-area{
+    display: inline-flex;
+    height: 100px;
+    width: 450px;
+    margin: 0px;
+}
+.nav-list{
+    /* flex: 1; */
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.nav-list-item{
+    float: left;
+    margin: 15px;
+}
+/* ESNav.vue */
+
+/* ESUserInfo.vue */
+.user-info-area {
+    margin-left: auto
+}
+.user-info-list{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.user-info-list-item{
+    float: left;
+    margin: 15px;
+}
+/* ESUserInfo.vue */
+
+/* ESFooter.vue */
+.footer-area {
+    /* display: flex;
+    flex-direction: column; */
+    flex: 1;
+    align-self: flex-end;
+    height: 50px;
+    width: 100%;
+    background-color: #a775f1;
+}
+.copy-text {
+    justify-content: center;
+    align-content: center;
+}
+/* ESFooter.vue */

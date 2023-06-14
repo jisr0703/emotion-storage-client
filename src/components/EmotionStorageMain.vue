@@ -1,13 +1,5 @@
 <template>
-    <div>
-        <router-link to="/save">
-            감정 저장
-        </router-link>
-        <br>
-        <router-link to="/view">
-            감정 보기
-        </router-link>
-    </div>
+    <div></div>
 </template>
 
 <script>
@@ -16,5 +8,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+@import '@/styles/styles.css';
 </style>
