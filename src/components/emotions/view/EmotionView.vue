@@ -30,29 +30,35 @@
 </template>
 
 <script>
-import { emotionPostGetAll } from '@/apis/save/emotionSaveAPI';
+// import { emotionPostGetAll } from '@/apis/save/emotionSaveAPI';
 import CarenderView from '@/components/emotions/view/carenderView.vue';
 
 export default {
     name: 'EmotionView',
     data() {
         return{
-            data: null,
+            data: [],
         }
     },
     components: {CarenderView},
     methods:{
+        // async fetchData(){
+        //     try{
+        //         this.data = await emotionPostGetAll()
+        //     }catch(error){
+        //         console.log(error+'!!!')
+        //     }
+        // }
         async fetchData(){
             try{
-                this.data = await emotionPostGetAll()
+                console.log('hello~')
+                this.$store.dispatch('postViewStore/TEMPS_GETALL')
+                this.data = this.$store.state.postViewStore.temps
             }catch(error){
                 console.log(error+'!!!')
             }
-            
         }
-    },
-    mounted() {
-        console.log(emotionPostGetAll())
+
     },
 }
 </script>

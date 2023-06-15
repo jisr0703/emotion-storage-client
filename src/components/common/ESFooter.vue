@@ -1,6 +1,6 @@
 <template>
     <div class="footer-area">
-        <p>Copyright ©Kxoxxy All rights reserved.</p>
+        <p class="copy-text">Copyright ©Kxoxxy All rights reserved.</p>
     </div>
 </template>
 

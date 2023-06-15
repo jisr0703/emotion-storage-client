@@ -13,7 +13,7 @@ export default {
     name: 'EmotionSave',
     data() {
         return {
-            data: 'default',
+            data: undefined,
         }
     },
     methods: {

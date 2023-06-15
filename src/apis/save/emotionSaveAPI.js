@@ -27,6 +27,7 @@ async function saveGet(){
 
 async function emotionPostGetAll(){
     try{
+        console.log("excution emotionPostGetAll()")
         if (DEFAULT_ADDRESS === 'localhost'){
             await mockEmotionPostGetAll()
             return await Axios.get('/emtPost')
@@ -46,7 +47,13 @@ async function emotionPostGetAll(){
     }
 }
 
+function tempsGetAll(){
+    console.log('execution tempsGetAll()')
+    return 10
+}
+
 export {
     saveGet,
-    emotionPostGetAll
+    emotionPostGetAll,
+    tempsGetAll
 }

@@ -1,22 +1,28 @@
 /* common */
 body {
+    margin: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 /* common */
 
 /* ESHeader.vue */
 .header-area{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     height: 100px;
     width: 1000px;
+    margin: 30px auto;
 }
 /* ESHeader.vue */
 
 /* ESLogo.vue */
 .main-logo-area{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: 0px 10px;
 }
 .main-logo{
     height: 100px;
@@ -26,13 +32,17 @@ body {
 
 /* ESNav.vue */
 .nav-list-area{
-    display: inline-flex;
-    height: 100px;
-    width: 450px;
-    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: auto; */
+    width: 600px;
+    margin: 0px 10px;
+
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .nav-list{
-    /* flex: 1; */
     margin: 0px;
     padding: 0px;
     list-style: none;
@@ -45,7 +55,14 @@ body {
 
 /* ESUserInfo.vue */
 .user-info-area {
-    margin-left: auto
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 0px auto;
+
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .user-info-list{
     margin: 0px;
@@ -60,12 +77,12 @@ body {
 
 /* ESFooter.vue */
 .footer-area {
-    /* display: flex;
-    flex-direction: column; */
-    flex: 1;
-    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
-    width: 100%;
+    width: 1000px;
+    padding: 20px 0px;
     background-color: #a775f1;
 }
 .copy-text {
