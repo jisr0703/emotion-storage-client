@@ -4,7 +4,6 @@
         <ESNav />
         <ESUserInfo />
     </header>
-    <br>
 </template>
 
 <script>

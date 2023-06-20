@@ -1,88 +1,79 @@
 <template>
-    <div>
-        Emotion View Page <br>
-        <!-- <CarenderView /> -->
-        <button @click="fetchData()">버튼 클릭</button>
-
-        <table border="1" style="border: 1px;">
-            <thead>
-                <th>닉네임</th>
-                <th>날짜</th>
-                <th>제목</th>
-                <th>내용</th>
-                <th>태그</th>
-            </thead>
-            <tbody v-for="(post, index) in data" :key="index">
-                <p>{{ checkYear(post.date) }}년</p>
-                <p>{{ checkMonth(post.date) }}월</p>
-                <p>{{ checkDate(post.date) }}일</p>
+    <div class="main-view-area" v-if="dataProcessed">
+        <table class="tbl tbl-main-view">
+            <tbody class="tbl" v-for="group in this.postObj" :key="group[0]">
                 <tr>
-                    <td>{{ post.name }}</td>
-                    <td>{{ post.date }}</td>
-                    <td>{{ post.title }}</td>
-                    <td>{{ post.content }}</td>
-                    <td>
-                        <p v-for="(tag, index) in post.tags" :key="index"> 
+                    <td colspan="5">
+                        <p class="post-view-ymd year-area">
+                            <text>{{ checkYear(group[0]) }}년</text>
+                        </p>
+                        <p class="post-view-ymd month-area">
+                            <text>{{ checkMonth(group[0][0]) }}월</text>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="tbl" v-for="item, index in group[0][1]" :key="index">
+                    <!-- <td class="tbl">{{ checkDate(item.date) }}일</td>
+                    <td class="tbl">{{ item.title }}</td>
+                    <td class="tbl">{{ item.content.substr(0,100) }}...</td>
+                    <td class="tbl">
+                        <p v-for="tag, index in item.tags" :key="index"> 
                             {{ tag }}
                         </p>
                     </td>
+                    <td class="tbl">{{ checkTime(item.date) }}</td> -->
                 </tr>
             </tbody>
         </table>
     </div>
+    <div class="main-view-area" v-else>
+        <p>Loading...</p>
+    </div>
 </template>
 
 <script>
-// import { emotionPostGetAll } from '@/apis/save/emotionSaveAPI';
-// import CarenderView from '@/components/emotions/view/carenderView.vue';
+import{ checkYear, checkMonth, checkDate, checkYMD, groupByDate, checkTime, groupByYearMonth} from "@/scripts/view/EmotionView"
 
 export default {
     name: 'EmotionView',
     data() {
         return{
-            data: {},
+            dataProcessed: false,
         }
     },
-    // components: {CarenderView},
+    computed:{
+        postObj() {
+            return this.groupByYearMonth(this.$store.getters['postViewStore/getTemps']);
+        },
+    },
     methods:{
+        checkYear, 
+        checkMonth, 
+        checkDate, 
+        checkYMD, 
+        checkTime,
+        groupByDate,
+        groupByYearMonth,
         async fetchData(){
             try{
-                this.$store.dispatch('postViewStore/TEMPS_GETALL')
-                setTimeout(() => {
-                    
-                }, 3000);
-                this.data = this.$store.state.postViewStore.temps
+                this.$store.dispatch('postViewStore/TEMPS_GETALL');
             }catch(error){
                 console.log(error+'!!!')
             }
         },
-        checkYear(datetime){
-            return datetime.substr(0,4)
-            // return datetime.getFullYear();
+
         },
-        checkMonth(datetime){
-            return datetime.substr(5,2)
-        },
-        checkDate(datetime){
-            return datetime.substr(8,2)
-        },
-        temp(a,b){
-            if (a===b) {
-                return 1
-            }
-            return 0
+    async created() {
+        try{
+            await this.fetchData();
+            this.dataProcessed = true;
+        } catch (error) {
+            console.log(error + '!!!');
         }
     },
-    
-    created() {
-        console.log("created !!!")
-    },
-    mounted() {
-        console.log("mounted !!!")
-        this.fetchData()
-    }
 }
 </script>
 
 <style>
+@import '@/styles/styles.css';
 </style>

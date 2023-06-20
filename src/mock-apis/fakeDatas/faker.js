@@ -3,9 +3,9 @@ import dayjs from 'dayjs';
 
 function emotionPostFakeData(){
     const data = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         const name = faker.person.fullName();
-        const date = dayjs(faker.date.recent()).format('YYYY-MM-DD HH:mm:ss');
+        const date = dayjs(faker.date.between({ from: '2020-01-01T00:00:00.000Z', to: '2030-01-01T00:00:00.000Z' })).format('YYYY-MM-DD HH:mm:ss');
         // dayjs(dateTimeString).format('YYYY-MM-DD HH:mm:ss');
         const title = faker.word.adjective();
         const content = faker.lorem.paragraph();

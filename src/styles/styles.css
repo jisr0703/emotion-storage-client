@@ -4,16 +4,43 @@ body {
     display: flex;
     flex-direction: column;
 }
-/* common */
 
-/* EmotionStorageMain */
-.main-area{
+.btn, 
+.btn:link, 
+.btn:visited {
     display: flex;
-    flex-direction: column;
+    text-decoration: none !important;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+    /* font-size: 30px; */
+}
+ 
+.btn:hover {
+    text-decoration: none !important;
+    color: black;
+    background-color: white;
+}
+
+.btn:active {
+    text-decoration: none !important;
+    color: white;
+    background-color: gray;
+}
+
+.btn-common {
     align-items: center;
     justify-content: center;
+    
 }
-/* EmotionStorageMain */
+.tbl {
+    border: none;
+}
+ /* table-main-view */
+/* common */
 
 /* ESHeader.vue */
 .header-area{
@@ -31,6 +58,9 @@ body {
 .main-logo-area{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
     margin: 0px 10px;
 }
 .main-logo{
@@ -45,7 +75,7 @@ body {
     flex-direction: column;
     justify-content: center;
     /* width: auto; */
-    width: 600px;
+    width: 700px;
     margin: 0px 10px;
 
     border: 1px solid black;
@@ -70,6 +100,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 200px;
     margin: 0px 0px 0px auto;
 
     border: 1px solid black;
@@ -95,6 +126,7 @@ body {
     justify-content: center;
     height: 50px;
     width: 100%;
+    margin: 10px 0px;
     padding: 20px 0px;
     background-color: #a775f1;
 }
@@ -113,3 +145,58 @@ body {
     font-weight: 800;
 }
 /* ESFooter.vue */
+
+/* EmotionStorageMain */
+.main-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-logo-section{
+    margin: 30px;
+}
+
+.start-btn-area {
+    display: flex;
+    flex-direction: row;
+    
+    margin: 30px;
+}
+/* EmotionStorageMain */
+
+/* EmotionView */
+.main-view-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tbl-main-view{
+    width: 1000px;
+}
+
+.post-view-ymd {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 0;
+    padding: 0 0 0 10px;
+    height: 30px;
+}
+.year-area {
+    background: linear-gradient(90deg, #1BFB9B, #2AF6EA);
+}
+
+.month-area {
+    background: linear-gradient(90deg, #FACF68, #FB70B1);
+}
+
+.day-area {
+    background: linear-gradient(90deg, #34E4E2, #B586F8);
+}
+/* EmotionView */

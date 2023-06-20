@@ -1,6 +1,8 @@
 <template>
     <div class="main-logo-area">
-        <img class="main-logo" src="@/assets/EmotionStorageLogo.png">
+        <router-link to="/">
+            <img class="main-logo" src="@/assets/EmotionStorageLogo.png">
+        </router-link>
     </div>
 </template>
 

@@ -1,12 +1,12 @@
 <template>
     <div class="main-area">
-        <section>
+        <section class="main-logo-section">
             <img src="@/assets/EmotionStorageLogo.png">
         </section>
 
-        <section>
-            <router-link to="/view">
-                <button>시작하기</button>
+        <section class="start-btn-area">
+            <router-link to="/view" class="btn btn-common">
+                S t a r t
             </router-link>
         </section>
 

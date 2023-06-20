@@ -24,7 +24,6 @@ export const postViewStore = {
                     }
                 }
                 let sortData = data.sort(compareByDateTime)
-                console.log('Ac)tion Function'+ JSON.stringify(data))
                 context.commit('TEMPS_SET_GETALL',sortData)
             })
             .catch((error) => {
