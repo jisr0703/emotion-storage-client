@@ -6,6 +6,15 @@ body {
 }
 /* common */
 
+/* EmotionStorageMain */
+.main-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* EmotionStorageMain */
+
 /* ESHeader.vue */
 .header-area{
     display: flex;
@@ -41,6 +50,8 @@ body {
 
     border: 1px solid black;
     border-radius: 5px;
+
+    background-color: aqua;
 }
 .nav-list{
     margin: 0px;
@@ -63,6 +74,8 @@ body {
 
     border: 1px solid black;
     border-radius: 5px;
+
+    background-color: bisque;
 }
 .user-info-list{
     margin: 0px;
@@ -81,12 +94,22 @@ body {
     align-items: center;
     justify-content: center;
     height: 50px;
-    width: 1000px;
+    width: 100%;
     padding: 20px 0px;
     background-color: #a775f1;
 }
-.copy-text {
+.footer-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+}
+.license {
     justify-content: center;
     align-content: center;
+}
+.bold-text{
+    display: inline-block;
+    font-weight: 800;
 }
 /* ESFooter.vue */

@@ -27,11 +27,10 @@ async function saveGet(){
 
 async function emotionPostGetAll(){
     try{
-        console.log("excution emotionPostGetAll()")
         if (DEFAULT_ADDRESS === 'localhost'){
             await mockEmotionPostGetAll()
             return await Axios.get('/emtPost')
-                .then(response => response.data.postData)
+                .then(response => response.data.postData)  
         }else{                                      // api call
             await Axios.get('/emtPost')
             .then(response => {

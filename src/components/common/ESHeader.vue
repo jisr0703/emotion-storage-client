@@ -1,9 +1,9 @@
 <template>
-    <div class="header-area">
+    <header class="header-area">
         <ESLogo />
         <ESNav />
         <ESUserInfo />
-    </div>
+    </header>
     <br>
 </template>
 

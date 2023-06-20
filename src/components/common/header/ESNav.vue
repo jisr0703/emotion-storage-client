@@ -2,13 +2,13 @@
     <nav class="nav-list-area">
         <ul class="nav-list">
             <li class="nav-list-item">
-                <router-link to="/save">
-                    감정 저장
+                <router-link to="/view">
+                    감정 보기
                 </router-link>
             </li>
             <li class="nav-list-item">
-                <router-link to="/view">
-                    감정 보기
+                <router-link to="/save">
+                    감정 쓰기
                 </router-link> 
             </li>
             <li class="nav-list-item">

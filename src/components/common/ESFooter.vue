@@ -1,7 +1,12 @@
 <template>
-    <div class="footer-area">
-        <p class="copy-text">Copyright ©Kxoxxy All rights reserved.</p>
-    </div>
+    <footer class="footer-area">
+        <div class="footer-wrap">
+            <div class="license">Copyright 
+                <p class="bold-text">©Kxoxxy</p> 
+                All rights reserved.
+            </div>
+        </div>
+    </footer>
 </template>
 
 <script>

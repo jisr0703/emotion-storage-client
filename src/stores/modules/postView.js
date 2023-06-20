@@ -13,10 +13,21 @@ export const postViewStore = {
     actions: {
         TEMPS_GETALL(context){
             emotionPostGetAll()
-            .then(({data})=> {
-                context.commit("TEMPS_SET_GETALL",data)
+            .then((data)=> {
+                const compareByDateTime = (a,b)=>{
+                    if (a.date < b.date) {
+                        return 1;
+                    } else if (a.date > b.date) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                }
+                let sortData = data.sort(compareByDateTime)
+                console.log('Ac)tion Function'+ JSON.stringify(data))
+                context.commit('TEMPS_SET_GETALL',sortData)
             })
-            .catch(error=> {
+            .catch((error) => {
                 console.log('error>>>', error)
             })
         }
