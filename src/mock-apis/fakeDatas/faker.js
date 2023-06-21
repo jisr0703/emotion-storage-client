@@ -4,9 +4,16 @@ import dayjs from 'dayjs';
 function emotionPostFakeData(){
     const data = [];
     for (let i = 0; i < 20; i++) {
+        const index = i;
         const name = faker.person.fullName();
-        const date = dayjs(faker.date.between({ from: '2020-01-01T00:00:00.000Z', to: '2030-01-01T00:00:00.000Z' })).format('YYYY-MM-DD HH:mm:ss');
-        // dayjs(dateTimeString).format('YYYY-MM-DD HH:mm:ss');
+        const date = new Date(dayjs(faker.date.between({ from: '2020-01-01T00:00:00.000Z', to: '2030-01-01T00:00:00.000Z' })).format('YYYY-MM-DD HH:mm:ss'));        
+        const year = date.getFullYear()
+        const month = date.getMonth()
+        const day = date.getDay();
+        const hour = String(date.getHours()).padStart(2, '0');
+        const minute = String(date.getMinutes()).padStart(2, '0');
+        const second = String(date.getSeconds()).padStart(2, '0')
+        const time = `${hour}:${minute}:${second}`;
         const title = faker.word.adjective();
         const content = faker.lorem.paragraph();
         const tags = []
@@ -15,8 +22,9 @@ function emotionPostFakeData(){
             const tag = faker.word.sample(3)
             tags.push(tag)
         }
-        data.push({ name, date, title, content, tags });
+        data.push({ index, name, year, month, day, time, title, content, tags });
     }
+    console.log(JSON.stringify(data))
     return data;
 }
 
