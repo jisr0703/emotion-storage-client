@@ -23,7 +23,6 @@ export const postViewStore = {
     },
     getters: {
         getTemps(state){
-            console.log(JSON.stringify(state.temps))
             return state.temps;
         }
     }

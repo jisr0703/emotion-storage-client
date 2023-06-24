@@ -9,7 +9,6 @@
                 S t a r t
             </router-link>
         </section>
-
     </div>
 </template>
 

@@ -167,36 +167,45 @@ body {
 /* EmotionStorageMain */
 
 /* EmotionView */
-.main-view-area {
+
+.main{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
+.post-view-list-area {
 
-.tbl-main-view{
+}
+
+.index-top{
+ 
+}
+
+.post-area{
     width: 1000px;
 }
 
-.post-view-ymd {
-    font-weight: 600;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.each-post-ele{
     margin: 5px 0;
-    padding: 0 0 0 10px;
-    height: 30px;
 }
+
 .year-area {
+    font-size: 26px;
+    font-weight: bold;
     background: linear-gradient(90deg, #1BFB9B, #2AF6EA);
 }
 
 .month-area {
+    font-size: 20px;
+    font-weight: bold;
     background: linear-gradient(90deg, #FACF68, #FB70B1);
 }
 
 .day-area {
     background: linear-gradient(90deg, #34E4E2, #B586F8);
+}
+
+.day-span {
+    font-size: 16px;
+    font-weight: bold;
 }
 /* EmotionView */

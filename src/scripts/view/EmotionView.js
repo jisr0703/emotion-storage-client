@@ -1,9 +1,9 @@
 function reorganizeObj(data){
-  console.log("~!~!~!~!~!~!~!~!"+JSON.stringify(data))
+  console.log(JSON.stringify(data))
   const sortDate = data.sort(function(a, b) {
     return new Date(b.date) - new Date(a.date);
   })
-  console.log("!@!@!@!@!@!@!@!@"+JSON.stringify(sortDate))
+  console.log(JSON.stringify(sortDate))
   const obj = {}
 
   for ( const item of sortDate ){

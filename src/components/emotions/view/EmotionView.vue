@@ -1,53 +1,31 @@
 <template>
-    <div class="main-view-area" v-if="dataProcessed">
-        <article>
-            <section v-for="yearGroup in this.postObj" :key="yearGroup[0]">
-                <p>{{ yearGroup[0] }}</p>
-                <div>
-                    <p></p>
-                    <!-- <router-link></router-link>
-                    <router-link></router-link>
-                    <router-link></router-link>
-                    <router-link></router-link> -->
-                </div>
-            </section>
-        </article>
-        <!-- <table class="tbl tbl-main-view">
-            <tbody class="tbl">
-                <template v-for="group in this.postObj" :key="group[0]">
-                    <tr>
-                        <td colspan="5">
-                            <p class="post-view-ymd year-area">
-                                <text>{{ checkYear(group[0]) }}년</text>
-                            </p>
-                            <p class="post-view-ymd month-area">
-                                <text>{{ checkMonth(group[0][0]) }}월</text>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr class="tbl" v-for="item, index in group[0][1]" :key="index"> -->
-                        <!-- <td class="tbl">{{ checkDate(item.date) }}일</td>
-                        <td class="tbl">{{ item.title }}</td>
-                        <td class="tbl">{{ item.content.substr(0,100) }}...</td>
-                        <td class="tbl">
-                            <p v-for="tag, index in item.tags" :key="index"> 
+    <div class="main">
+        <article class="post-view-list-area" v-if="dataProcessed">
+        <section class="index-top"></section>
+                <section class="post-area" v-for="yearPosts in this.postObj" :key="yearPosts">
+                    <p class="each-post-ele year-area">{{ yearPosts.year }}년</p>
+                    <span v-for="monthPosts in yearPosts.monthData" :key="monthPosts">
+                        <p class="each-post-ele month-area">{{ monthPosts.month }}월 </p>
+                        <p class="each-post-ele day-area" v-for="item in monthPosts.items" :key="item.index">
+                            <span class="day-span"> {{ item.day }}일</span>
+                            <span> | {{ item.title }} | </span>
+                            <span>{{ item.content.substr(0,100) }}...... | </span>
+                            <span v-for="tag, index in item.tags" :key="index">
                                 {{ tag }}
-                            </p>
-                        </td>
-                        <td class="tbl">{{ checkTime(item.date) }}</td> -->
-                    <!-- </tr>
-                </template>
-            </tbody>
-        </table> -->
-    </div>
-    <div class="main-view-area" v-else>
-        <p>Loading...</p>
+                                <text v-if="index !== item.tags.length - 1">, </text>
+                            </span>
+                            <span> | {{ item.time }}</span> <br>
+                        </p>
+                    </span>
+                </section>
+        </article>
+        <article class="post-view-list-area" v-else>
+            <p>Loading...</p>
+        </article>
     </div>
 </template>
 
 <script>
-import{ checkYear, checkMonth, checkDate, checkYMD, reorganizeObj, checkTime} from "@/scripts/view/EmotionView"
-
 export default {
     name: 'EmotionView',
     data() {
@@ -57,16 +35,10 @@ export default {
     },
     computed:{
         postObj() {
-            return reorganizeObj(this.$store.getters['postViewStore/getTemps']);
+            return this.$store.getters['postViewStore/getTemps'];
         },
     },
     methods:{
-        checkYear, 
-        checkMonth, 
-        checkDate, 
-        checkYMD, 
-        checkTime,
-        reorganizeObj,
         async fetchData(){
             try{
                 this.$store.dispatch('postViewStore/TEMPS_GETALL');
