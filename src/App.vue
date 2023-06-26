@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <ESHeader />
-    <router-view />
+    <div class="main">
+      <router-view />
+    </div>
     <ESFooter />
   </div>
 </template>
@@ -15,3 +17,7 @@ export default {
   components: {ESHeader,ESFooter}
 }
 </script>
+
+<style scoped>
+@import '@/styles/styles.css';
+</style>

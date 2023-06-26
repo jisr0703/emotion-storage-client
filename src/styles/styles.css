@@ -5,6 +5,11 @@ body {
     flex-direction: column;
 }
 
+.main{
+    display: flex;
+    justify-content: center;
+}
+
 .btn, 
 .btn:link, 
 .btn:visited {
@@ -167,11 +172,6 @@ body {
 /* EmotionStorageMain */
 
 /* EmotionView */
-
-.main{
-    display: flex;
-    justify-content: center;
-}
 .post-view-list-area {
 
 }
@@ -191,17 +191,20 @@ body {
 .year-area {
     font-size: 26px;
     font-weight: bold;
-    background: linear-gradient(90deg, #1BFB9B, #2AF6EA);
+    /* background: linear-gradient(90deg, #1BFB9B, #2AF6EA); */
+    background: linear-gradient(90deg, #1BFB9B, white);
 }
 
 .month-area {
     font-size: 20px;
     font-weight: bold;
-    background: linear-gradient(90deg, #FACF68, #FB70B1);
+    /* background: linear-gradient(90deg, #FACF68, #FB70B1); */
+    background: linear-gradient(90deg, #FACF68, white);
 }
 
 .day-area {
-    background: linear-gradient(90deg, #34E4E2, #B586F8);
+    /* background: linear-gradient(90deg, #34E4E2, #B586F8); */
+    background: linear-gradient(90deg, white, #B586F8);
 }
 
 .day-span {
@@ -209,3 +212,87 @@ body {
     font-weight: bold;
 }
 /* EmotionView */
+
+/* EmotionSave */
+.post-write-area{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+
+    gap: 15px;
+}
+
+.post-write-form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+
+    gap: 10px;
+}
+
+.title{
+    /* width: 100%; */
+}
+
+.tag{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    
+    gap: 5px;
+}
+
+.tag-input{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+}
+
+.post-tag-input{
+    box-sizing: border-box;
+    height: 30px;
+    width: auto;
+}
+
+.tag-add-button{
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+}
+
+.tag-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 5px 0px;
+    padding: 5px
+}
+
+.tag-box{
+    box-sizing: border-box;
+    border: .5px solid gray;
+    border-radius: 12px;
+    list-style-type: none;
+    margin: 0 5px;
+}
+
+.post-title-input{
+    box-sizing: border-box;
+    height: 30px;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+.post-content-input{
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+    overflow-y: auto;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+/* EmotionSave */
