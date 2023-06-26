@@ -33,13 +33,13 @@ export default {
     },
     computed:{
         postObj() {
-            return this.$store.getters['postViewStore/getTemps'];
+            return this.$store.getters['postViewStore/getEmotions'];
         },
     },
     methods:{
         async fetchData(){
             try{
-                this.$store.dispatch('postViewStore/TEMPS_GETALL');
+                this.$store.dispatch('postViewStore/EMOTIONS_GETALL');
             }catch(error){
                 console.log(error+'!!!')
             }

@@ -2,12 +2,12 @@
     <nav class="nav-list-area">
         <ul class="nav-list">
             <li class="nav-list-item">
-                <router-link to="/view">
+                <router-link to="/emt-all">
                     감정 보기
                 </router-link>
             </li>
             <li class="nav-list-item">
-                <router-link to="/save">
+                <router-link to="/emt-save">
                     감정 쓰기
                 </router-link> 
             </li>

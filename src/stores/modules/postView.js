@@ -1,20 +1,20 @@
-import { emotionPostGetAll } from '@/apis/save/emotionSaveAPI'
+import { emotionGetAll } from '@/apis/save/emotionSaveAPI'
 
 export const postViewStore = {
     namespaced: true,
     state: {
-        temps: [],
+        emotions: [],
     },
     mutations: {
-        TEMPS_SET_GETALL(state,data){
-            state.temps = data
+        EMOTIONS_SET_GETALL(state,data){
+            state.emotions = data
         }
     },
     actions: {
-        TEMPS_GETALL(context){
-            emotionPostGetAll()
+        EMOTIONS_GETALL(context){
+            emotionGetAll()
             .then((data)=> {
-                context.commit('TEMPS_SET_GETALL', data)
+                context.commit('EMOTIONS_SET_GETALL', data)
             })
             .catch((error) => {
                 console.log('error>>>', error)
@@ -22,8 +22,8 @@ export const postViewStore = {
         }
     },
     getters: {
-        getTemps(state){
-            return state.temps;
+        getEmotions(state){
+            return state.emotions;
         }
     }
 }

@@ -6,8 +6,8 @@ import EmotionView from '@/components/emotions/view/EmotionView'
 
 const routes = [
     { path: '/', name: 'main', component: EmotionStorageMain},
-    { path: '/save', name: 'save', component: EmotionSave},
-    { path: '/view', name: 'view', component: EmotionView},
+    { path: '/emt-all', name: 'view', component: EmotionView},
+    { path: '/emt-save', name: 'save', component: EmotionSave},
 ]
 
 const router = createRouter({

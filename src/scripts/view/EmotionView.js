@@ -25,31 +25,7 @@ function reorganizeObj(data){
   return sortDate
 }
 
-function checkYear(datetime){
-  return datetime.substr(0,4);
-}
-
-function checkMonth(datetime){
-  return datetime.substr(5,2);
-}
-
-function checkDate(datetime){
-  return datetime.substr(8,2);
-}
-
-function checkYMD(datetime){
-  return datetime.substr(0,10)
-}
-
-function checkTime(datetime){
-  return datetime.substr(11,8)
-}
 
 export {
-    checkYear,
-    checkMonth,
-    checkDate,
-    checkYMD,
-    checkTime,
     reorganizeObj,
 }

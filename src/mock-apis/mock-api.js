@@ -10,16 +10,17 @@ function mockGet(){
     mock.onGet('/').reply(200, { message: 'Mocked response',});
 }
 
-async function mockSaveGet(){
-    mock.onGet('/save').reply(200, { message: 'emotion saved',});
+async function mockEmotionGetAll(){
+    mock.onGet('/emt-all').reply(200, { postData: emotionPostFakeData() });
 }
 
-async function mockEmotionPostGetAll(){
-    mock.onGet('/emtPost').reply(200, { postData: emotionPostFakeData() });
+
+async function mockEmotionSavePost(){
+    mock.onPost('/emt-save').reply(201, { message: 'emotion saved',});
 }
 
 export {
     mockGet, 
-    mockSaveGet,
-    mockEmotionPostGetAll
+    mockEmotionSavePost,
+    mockEmotionGetAll
 };

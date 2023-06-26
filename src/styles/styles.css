@@ -165,7 +165,6 @@ body {
 
 .start-btn-area {
     display: flex;
-    flex-direction: row;
     
     margin: 30px;
 }
@@ -255,6 +254,8 @@ body {
     box-sizing: border-box;
     height: 30px;
     width: auto;
+
+    padding: 10px;
 }
 
 .tag-add-button{
@@ -277,6 +278,7 @@ body {
     border-radius: 12px;
     list-style-type: none;
     margin: 0 5px;
+    padding: 5px;
 }
 
 .post-title-input{
@@ -285,14 +287,32 @@ body {
     width: 100%;
     border: 1px solid gray;
     border-radius: 8px;
+
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .post-content-input{
     box-sizing: border-box;
+    height: 300px;
     width: 100%;
     resize: none;
     overflow-y: auto;
     border: 1px solid gray;
     border-radius: 8px;
+
+    font-size: 14px;
+    padding: 10px;
+}
+
+.submit-btn-area{
+    display: flex;
+    margin: 30px;
+    justify-content: flex-end;
+}
+
+.submit-button{
+    
 }
 /* EmotionSave */

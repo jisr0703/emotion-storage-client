@@ -1,16 +1,18 @@
 import Axios from "axios";
-import { mockSaveGet, mockEmotionPostGetAll } from "@/mock-apis/mock-api"
+import { mockEmotionSavePost, mockEmotionGetAll } from "@/mock-apis/mock-api"
 
 const DEFAULT_ADDRESS = 'localhost'
 
-async function saveGet(){
+async function emotionSavePost(){
     try{
         if (DEFAULT_ADDRESS === 'localhost'){       // mocking
-            await mockSaveGet();
-            return await Axios.get('/save')
+            await mockEmotionSavePost();
+            return await Axios.post('/emt-save', {})
                 .then(response => response.data.message)
+                // const response = await axios.post('/api/endpoint', { data: 'some data' });
+                // console.log(response.data); // 응답 데이터 처리
         }else{                                      // api call
-            await Axios.get('/save')
+            await Axios.get('/emt-save')
             .then(response => {
                 console.log('api called')
                 return response.data.message;
@@ -25,14 +27,14 @@ async function saveGet(){
     
 }
 
-async function emotionPostGetAll(){
+async function emotionGetAll(){
     try{
         if (DEFAULT_ADDRESS === 'localhost'){
-            await mockEmotionPostGetAll()
-            return await Axios.get('/emtPost')
+            await mockEmotionGetAll()
+            return await Axios.get('/emt-all')
                 .then(response => response.data.postData)  
         }else{                                      // api call
-            await Axios.get('/emtPost')
+            await Axios.get('/emt-all')
             .then(response => {
                 console.log('api called')
                 return response.data.postData;
@@ -46,13 +48,8 @@ async function emotionPostGetAll(){
     }
 }
 
-function tempsGetAll(){
-    console.log('execution tempsGetAll()')
-    return 10
-}
 
 export {
-    saveGet,
-    emotionPostGetAll,
-    tempsGetAll
+    emotionSavePost,
+    emotionGetAll,
 }
