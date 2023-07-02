@@ -1,4 +1,6 @@
 <template>
+    <p> {{ this.$store.state.postViewStore.temp }}zzzz </p>
+    <!-- this.$store.state.fandomPermissionStore.midx -->
     <article class="post-view-list-area" v-if="dataProcessed">
     <section class="index-top"></section>
             <section class="post-area" v-for="yearPosts in this.postObj" :key="yearPosts">
