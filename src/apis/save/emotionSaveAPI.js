@@ -1,26 +1,12 @@
 import Axios from "axios";
-// import { mockEmotionSavePost, mockEmotionGetAll } from "@/mock-apis/mock-api"
-import mock from "@/apis/save/emotionSaveAPI"
-
-const DEFAULT_ADDRESS = 'localhost'
-
-
-// Mock 어댑터 사용
-if (DEFAULT_ADDRESS === 'localhost') {
-    Axios.interceptors.request.use(config => {
-        return mock.onRequest(config);
-      });
-    
-}
+import config from "@/apis/endPoint"
 
 async function emotionSavePost(emotionItem){
     try{
-        if (DEFAULT_ADDRESS === 'localhost'){       // mocking
-            console.log("level 1!")
-            console.log("level 3!")
-            return await Axios.post('http://localhost:8080', emotionItem).then(response => [response.data.message, response.status])
-                // const response = await axios.post('/api/endpoint', { data: 'some data' });
-                // console.log(response.data); // 응답 데이터 처리
+        if (process.env.VUE_APP_API_URL === config.localUrl){       // mocking
+            // return await Axios.post(config.localUrl+'/emt-all', emotionItem)
+            return await Axios.post('/emt-save', emotionItem)
+                .then(response => [response.data.message, response.status])
         }else{                                      // api call
             await Axios.post('http://localhost:8080', emotionItem, {
                 headers: {
@@ -43,29 +29,6 @@ async function emotionSavePost(emotionItem){
     }
 }
 
-// async function emotionGetAll(){
-//     try{
-//         if (DEFAULT_ADDRESS === 'localhost'){
-//             await mockEmotionGetAll()
-//             return await Axios.get('/emt-all')
-//                 .then(response => response.data.postData)  
-//         }else{                                      // api call
-//             await Axios.get('/emt-all')
-//             .then(response => {
-//                 console.log('api called')
-//                 return response.data.postData;
-//             })
-//             .catch(error => {                       // Error when calling api
-//                 console.error(error + '!!!');
-//             })
-//         }
-//     }catch(error){
-//         console.log(error+'!!!')
-//     }
-// }
-
-
 export {
     emotionSavePost,
-    // emotionGetAll,
 }

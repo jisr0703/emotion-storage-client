@@ -1,4 +1,5 @@
-import { emotionGetAll,emotionSavePost } from '@/apis/save/emotionSaveAPI'
+import { emotionSavePost } from '@/apis/save/emotionSaveAPI'
+import { emotionGetAll } from '@/apis/view/emotionViewAPI'
 
 export const postViewStore = {
     namespaced: true,
@@ -26,9 +27,9 @@ export const postViewStore = {
         },
         TEMPS_GET_POST(context,emotionData){
             emotionSavePost(emotionData)
-            .then((data,status)=> {
+            .then((data)=> {
                 context.commit('TEMP_SET_POST',data)
-                console.log(JSON.stringify(data), status)
+                console.log(JSON.stringify(data))
             })
             .catch((error) => { 
                 console.error('error>>>', error)

@@ -1,12 +1,9 @@
-import Axios from "axios";
-import { mockEmotionGetAll } from "@/mock-apis/mock-api"
-
-const DEFAULT_ADDRESS = 'localhost'
+import Axios from 'axios';
+import config from '@/apis/endPoint';
 
 async function emotionGetAll(){
     try{
-        if (DEFAULT_ADDRESS === 'localhost'){
-            await mockEmotionGetAll()
+        if (process.env.VUE_APP_API_URL === config.localUrl){
             return await Axios.get('/emt-all')
                 .then(response => response.data.postData)  
         }else{                                      // api call
@@ -23,7 +20,6 @@ async function emotionGetAll(){
         console.log(error+'!!!')
     }
 }
-
 
 export {
     emotionGetAll,

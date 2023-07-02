@@ -20,8 +20,7 @@
                 <textarea class="post-content-input" type="text" ref="contentTextarea" v-model="content" @input="adjustTextareaHeight" value placeholder="오늘의 감정을 작성해보세요!" maxlength="10000"></textarea>
             </div>
             <div class="submit-btn-area">
-                <button class="btn btn-common submit-btn" @click.prevent="tempFunction">등록하기</button>
-                <!-- <button class="btn btn-common submit-btn" type="submit">등록하기</button> -->
+                <button class="btn btn-common submit-btn" type="submit">등록하기</button>
             </div>
         </form>
     </article>
@@ -43,24 +42,16 @@ export default {
     methods: {
         async submitForm(){
             try{
-                this.$store.dispatch('postViewStore/TEMPS_GET_POST',{title:this.title,content:this.content,tags:this.tags});
-                this.$router.push('/emt-all')
-            }catch(error){
-                console.log(error+'!!!')
-            }
-        },        
-        async tempFunction(){
-            try{
                 this.$store.dispatch('postViewStore/TEMPS_GET_POST',{
                     title:this.title,
                     content:this.content,
                     tags:this.tags
                 });
-                // this.$router.push('/emt-all')
+                this.$router.push('/emt-all')
             }catch(error){
                 console.log(error+'!!!')
             }
-        },
+        },    
         adjustTextareaHeight() {
             const textarea = this.$refs.contentTextarea;
             textarea.style.height = 'auto';
