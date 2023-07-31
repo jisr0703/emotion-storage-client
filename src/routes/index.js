@@ -5,9 +5,10 @@ import EmotionSave from '@/components/emotions/save/EmotionSave'
 import EmotionView from '@/components/emotions/view/EmotionView'
 
 const routes = [
-    { path: '/', name: 'main', component: EmotionStorageMain},
-    { path: '/emt-all', name: 'view', component: EmotionView},
-    { path: '/emt-save', name: 'save', component: EmotionSave},
+    { path: '/:pathMatch(.*)*', name: '*',component: EmotionStorageMain},
+    { path: '/kxoxxy', name: 'main', component: EmotionStorageMain},
+    { path: '/kxoxxy/emt-all', name: 'view', component: EmotionView},
+    { path: '/kxoxxy/emt-save', name: 'save', component: EmotionSave},
 ]
 
 const router = createRouter({

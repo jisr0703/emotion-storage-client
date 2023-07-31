@@ -5,7 +5,7 @@
         </section>
 
         <section class="start-btn-area">
-            <router-link to="/emt-all" class="btn btn-common">
+            <router-link to="/kxoxxy/emt-all" class="btn btn-common">
                 S t a r t
             </router-link>
         </section>

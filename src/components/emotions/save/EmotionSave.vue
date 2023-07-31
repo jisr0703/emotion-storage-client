@@ -47,7 +47,7 @@ export default {
                     content:this.content,
                     tags:this.tags
                 });
-                this.$router.push('/emt-all')
+                this.$router.push('/kxoxxy/emt-all')
             }catch(error){
                 console.log(error+'!!!')
             }

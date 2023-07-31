@@ -3,12 +3,12 @@ import config from "@/apis/endPoint"
 
 async function emotionSavePost(emotionItem){
     try{
-        if (process.env.VUE_APP_API_URL === config.localUrl){       // mocking
-            // return await Axios.post(config.localUrl+'/emt-all', emotionItem)
+        if (process.env.NODE_ENV === 'test'){
             return await Axios.post('/emt-save', emotionItem)
                 .then(response => [response.data.message, response.status])
-        }else{                                      // api call
-            await Axios.post('http://localhost:8080', emotionItem, {
+                .catch(error => console.error(error + '!!!'));
+        } else {
+            await Axios.post(`${config.localUrl}/emt-save`, emotionItem, {
                 headers: {
                     'Content-type': 'application/json',
                     "Access-Control-Allow-Origin": true,
@@ -16,13 +16,8 @@ async function emotionSavePost(emotionItem){
                     withCredentials: true
                 }
             })
-            .then(response => {
-                console.log('api called')
-                return response.data.message;
-            })
-            .catch(error => {                       // Error when calling api
-                console.error(error + '!!!');
-            })
+            .then(response => [response.data.message, response.status])
+            .catch(error => console.error(error + '!!!'));
         }
     }catch(error){
         console.log(error+'!!!')

@@ -1,5 +1,5 @@
 const config ={
-    localUrl: 'http://localhost:8080',
+    localUrl: 'http://localhost:8000/kxoxxy',
     devUrl: '',
 }
 

@@ -22,7 +22,7 @@ export const postViewStore = {
                 context.commit('EMOTIONS_SET_GETALL', data)
             })
             .catch((error) => {
-                console.log('error>>>', error)
+                console.log('error >>>', error)
             })
         },
         TEMPS_GET_POST(context,emotionData){
@@ -32,7 +32,7 @@ export const postViewStore = {
                 console.log(JSON.stringify(data))
             })
             .catch((error) => { 
-                console.error('error>>>', error)
+                console.error('error >>>', error)
             })
         }
     },

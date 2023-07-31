@@ -53,6 +53,7 @@ function emotionPostFakeData() {
         }
         return acc;
     }, []);
+    console.log(JSON.stringify(postData))
     return postData;
 }
 

@@ -1,6 +1,6 @@
 <template>
     <div class="main-logo-area">
-        <router-link to="/">
+        <router-link to="/kxoxxy">
             <img class="main-logo" src="@/assets/EmotionStorageLogo.png">
         </router-link>
     </div>
